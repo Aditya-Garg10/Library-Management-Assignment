@@ -17,7 +17,7 @@ const port = process.env.port
 
 app.use(cors({
     origin: [               
-        "http://localhost:5173",                
+        "http://localhost:5173/",                
       ],    
     methods:["GET","POST","DELETE","PUT","PATCH"],
     credentials: true,
@@ -26,13 +26,13 @@ app.use(cors({
 
 
 const allowedOrigins = [         
-    "http://localhost:5173", 
+    "http://localhost:5173/", 
   ];
   
 app.use((req, res, next) => {
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
-      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Origin", origin);
     }
     res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
     res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
