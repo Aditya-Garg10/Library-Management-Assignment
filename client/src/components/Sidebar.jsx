@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MdBook, MdDashboard, MdLibraryBooks } from "react-icons/md";
+import { MdBook, MdDashboard, MdLibraryBooks, MdMoney } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import { LuUser2 } from "react-icons/lu";
 import { Button, Drawer } from 'antd';
@@ -17,7 +17,7 @@ const Sidebar = () => {
     const [menu, setmenu] = useState(window.location);
   return (
     <>
-    <div className='h-auto sm:hidden sm:w-full  w-1/5 flex flex-col gap-10 justify-normal py-10 items-center bg-[#eeeeee] '>
+    <div className='h-screen sm:hidden sm:w-full  w-1/5 flex flex-col gap-10 justify-around py-10 items-center bg-[#eeeeee] '>
       <div className="flex flex-row gap-3 font-bold justify-center items-center">
         <MdLibraryBooks className='text-2xl' />
         <h1>Librarian.io</h1>
@@ -55,8 +55,20 @@ const Sidebar = () => {
             </div>
         </Link>
       </div>
+     
      </div>
-    
+     <div className="flex flex-row w-full   gap-3  justify-center items-center">
+     
+     <Link onClick={()=>setmenu("transactions")} to="/transactions" className={`${menu === "transactions" ? "bg-[#2b2be8] text-white" : "bg-transparent text-black"} font-myFont   flex items-center  w-full h-[8vh]`}>
+            <div className="flex items-center h-full w-1/4 justify-center ">
+            <MdMoney className={`text-xl ${menu === "transactions" ? "text-white" : "text-gray-600"} `}/>
+            </div>
+            <div className='flex items-center h-full w-3/4 justify-start '>
+            <h1 className='text-sm '>Transactions</h1>
+            </div>
+        </Link>
+     
+      </div>
     </div>
     <div className='hidden h-[10vh] justify-around items-center sm:flex flex-row-reverse'>
     <Button className='rounded-none border-none  shadow-none bg-white text-black' type="primary" onClick={showDrawer}>

@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import Books from './pages/Books'
 import Members from './pages/Members'
 import { DataContext } from './context/context'
+import Transactions from './pages/Transactions'
 
 
 
@@ -43,6 +44,7 @@ const App = () => {
         <Route path='/' element={<Dashboard/>}></Route>
         <Route path='/books' element={<Books/>}></Route>
         <Route path='/users' element={<Members/>}></Route>
+        <Route path='/transactions' element={<Transactions/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
