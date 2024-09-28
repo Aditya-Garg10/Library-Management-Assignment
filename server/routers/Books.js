@@ -3,7 +3,7 @@ const { getbooksByNamePriceCategory,getAllBooks ,getBooksPriceRange,getBookByNam
 
 const router = express.Router()
 
-router.get("/getBookByName",getBookByName);
+router.post("/getBookByName",getBookByName);
 router.get("/getBookPriceRange",getBooksPriceRange);
 router.get("/getbooksByNamePriceCategory",getbooksByNamePriceCategory);
 router.get("/getAllBooks",getAllBooks);
