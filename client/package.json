@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.20.0",
+    "antd-style": "^3.7.0",
     "apiclient": "^0.2.5",
     "axios": "^1.7.3",
     "react": "^18.3.1",
