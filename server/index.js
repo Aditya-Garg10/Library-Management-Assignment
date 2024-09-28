@@ -5,6 +5,7 @@ const bookRoute = require("./routers/Books");
 const transactionRoute = require("./routers/Transactions");
 const userRoute = require("./routers/User");
 const { default: mongoose } = require("mongoose");
+const cors = require("cors")
 
 
 const app = express();
@@ -12,6 +13,32 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 const port = process.env.port
+
+
+app.use(cors({
+    origin: [               
+        "http://localhost:5174",                
+      ],    
+    methods:["GET","POST","DELETE","PUT","PATCH"],
+    credentials: true,
+}))
+
+
+
+const allowedOrigins = [         
+    "http://localhost:5174", 
+  ];
+  
+app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+      res.header("Access-Control-Allow-Origin", origin);
+    }
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+  });
 
 
 
