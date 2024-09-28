@@ -6,5 +6,10 @@ export const GET_USER_ROUTE = `${USER_ROUTE}/getAllUser`
 
 const BOOK_ROUTE = "api/books"
 export const GET_BOOK_BY_NAME_ROUTE = `${BOOK_ROUTE}/getBookByName`
+export const GET_ALLBOOK_ROUTE = `${BOOK_ROUTE}/getAllBooks`
 export const GET_BOOK_BY_PRICERANGE_ROUTE = `${BOOK_ROUTE}/getBookPriceRange`
 export const GET_BOOK_BY_DETAILS_ROUTE = `${BOOK_ROUTE}/getbooksByNamePriceCategory`
+
+const TRANSACTIONS_ROUTE = "api/transactions"
+export const CREATE_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateOrCreateTransaction`  
+export const GET_ALL_TRANSACTIONS = `${TRANSACTIONS_ROUTE}/allTransactions`

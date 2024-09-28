@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { GET_BOOK_BY_NAME_ROUTE, GET_USER_ROUTE } from './utils/constants'
+import { GET_ALLBOOK_ROUTE, GET_ALL_TRANSACTIONS, GET_BOOK_BY_NAME_ROUTE, GET_USER_ROUTE } from './utils/constants'
 import { apiClient } from './lib/Api-client'
 import Sidebar from './components/Sidebar'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
@@ -13,7 +13,7 @@ import Transactions from './pages/Transactions'
 
 const App = () => {
 
-  const { userData , setUserData } = useContext(DataContext) 
+  const { userData , setUserData ,allbookData, setAllBookData , transactionData , setTransactionData } = useContext(DataContext) 
 
   
   const getUserData = async() =>{
@@ -27,14 +27,52 @@ const App = () => {
     
   } 
   
+  const getBookData = async() =>{
+    try {
+      const response = await apiClient.get(GET_ALLBOOK_ROUTE );
+      setAllBookData(response.data)
+      // console.log(response.data)
+    } catch (error) {
+      
+    }
+    
+  } 
+  
+  const getTransactionData = async() =>{
+    try {
+      const response = await apiClient.get(GET_ALL_TRANSACTIONS );
+      setTransactionData(response.data)
+      // console.log(response.data)
+    } catch (error) {
+      
+    }
+  }
   
   useEffect(()=>{
     if(!userData){
       getUserData()
     }
     
+    
     // console.log(userData);   
   },[userData])
+  useEffect(()=>{
+    if(!allbookData){
+      getBookData()
+    }
+    
+    
+    // console.log(userData);   
+  },[allbookData])
+
+  useEffect(()=>{
+    if(!transactionData){
+      getTransactionData()
+    }
+    
+    
+    // console.log(userData);   
+  },[transactionData])
   return (
     <>
     <div className='h-full flex sm:flex-col flex-row w-full'>

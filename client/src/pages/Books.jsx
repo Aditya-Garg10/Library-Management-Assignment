@@ -116,7 +116,7 @@ const [category, setCategory] = useState("");
 
     <div className="flex  flex-col">
         <h1 className='text-xl sm:text-sm text-black  font-myFont'>Give a Price range of the rent <span className='text-sm text-gray-500'>(select any range from 200 to 1500)</span></h1>
-          <div className='flex gap-5 py-5 flex-row'>
+          <div className='flex flex-wrap gap-5 py-5 flex-row'>
           <input value={minPrice} onChange={(e)=>setminPrice(e.target.value)} type="number" className='px-2 border-2 border-black py-1' placeholder='Minimum Price' />
           <input value={maxPrice} onChange={(e)=>setmaxPrice(e.target.value)} type="number" className='px-2 border-2 border-black py-1' placeholder='Maximum Price' />
           <button onClick={handleRangeSubmit} className='bg-blue-950 px-3 py-1 text-white font-semibold rounded-sm'>Submit</button>

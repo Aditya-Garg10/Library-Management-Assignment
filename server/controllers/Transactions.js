@@ -179,11 +179,21 @@ const listofEntriesbtwDateRange = async(req,res) =>{
     }
 }
 
+const allTransactions = async(req,res) =>{
+  try {
+    const response = await Transactions.find({});
+
+    res.send(response).status(200)
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+}
 module.exports = {
   bookTotalRentGenerated,
   updateOrCreateTransaction,
   updateReturnTransaction,
   BookDetails,
   listOfBooksIssuedtoPerson,
-  listofEntriesbtwDateRange
+  listofEntriesbtwDateRange,
+  allTransactions
 };
