@@ -7,7 +7,7 @@ import { GrHelpBook } from "react-icons/gr";
 const Dashboard = () => {
   return (
     <>
-    <div className='p-10 w-3/4'>
+    <div className='p-10 w-5/6 h-screen'>
       <h1 className='text-4xl  font-semibold font-myFont'>Dashboard</h1>
     <div className='flex p-10   w-full flex-col '>
       <div className="flex gap-5 flex-row bg-[#eeeeee] w-full h-[15vh] justify-evenly items-center">

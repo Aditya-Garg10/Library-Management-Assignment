@@ -17,7 +17,7 @@ const Sidebar = () => {
     const [menu, setmenu] = useState(window.location);
   return (
     <>
-    <div className='h-screen sm:hidden sm:w-full  w-1/5 flex flex-col gap-10 justify-normal py-10 items-center bg-[#eeeeee] '>
+    <div className='h-auto sm:hidden sm:w-full  w-1/5 flex flex-col gap-10 justify-normal py-10 items-center bg-[#eeeeee] '>
       <div className="flex flex-row gap-3 font-bold justify-center items-center">
         <MdLibraryBooks className='text-2xl' />
         <h1>Librarian.io</h1>

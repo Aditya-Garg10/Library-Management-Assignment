@@ -7,8 +7,9 @@ export const DataContext = createContext(null);
 const DataContextProvider = (props) =>{
     const [userData, setUserData] = useState(null);
     const [bookData, setBookData] = useState(null);
+    const [rangeData, setRangeData] = useState(null);
     
-    const contextValue = {userData, setUserData,bookData, setBookData}
+    const contextValue = {userData, setUserData,bookData, rangeData, setRangeData, setBookData}
 
     return(
         <DataContext.Provider value={contextValue}>
