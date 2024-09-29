@@ -30,7 +30,7 @@ const useStyle = createStyles(({ css, token }) => {
 
 
 const Dashboard = () => {
-  const { allbookData , userData } = useContext(DataContext); 
+  const { allbookData  } = useContext(DataContext); 
   const { styles } = useStyle();
 const columns = [
   {
@@ -129,7 +129,7 @@ const columns = [
     <Table
       className={styles.customTable}
       columns={columns}
-      dataSource={allbookData}
+      dataSource={allbookData ? allbookData : ""}
       pagination={{
         pageSize: 10,
       }}
