@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Button, DatePicker, Input, Select, Space, Table, message } from 'antd';
 import { DataContext } from '../context/context';
-import { CREATE_RETURN_TRANSACTION_ROUTE, CREATE_TRANSACTION_ROUTE } from '../utils/constants';
+import { CREATE_RETURN_TRANSACTION_ROUTE, CREATE_TRANSACTION_ROUTE, GET_PERSONS_BOOKS } from '../utils/constants';
 import { createStyles } from 'antd-style';
 import { apiClient } from '../lib/Api-client';
 
@@ -69,7 +69,7 @@ const Transactions = () => {
       const response = await apiClient.put(CREATE_TRANSACTION_ROUTE, { bookName: Book, userName: User, issueDate: Date, returnDate: "" },
         {
           headers: {
-            "Access-Control-Allow-Origin": 'http://localhost:5173',
+            "Access-Control-Allow-Origin": '*',
           },
           withCredentials: true
         }
@@ -92,7 +92,7 @@ const Transactions = () => {
       const response = await apiClient.put(CREATE_RETURN_TRANSACTION_ROUTE, { bookName: Book, userName: User, returnDate: Date },
         {
           headers: {
-            "Access-Control-Allow-Origin": 'http://localhost:5173',
+            "Access-Control-Allow-Origin": '*',
           },
           withCredentials: true
         }
@@ -102,6 +102,32 @@ const Transactions = () => {
         message.success("Return Transaction Created")
       }
       else if(response.status === 503){
+        message.error("Book not available")
+      }
+      else{
+        message.error("User or Entry does'nt exists")
+      }
+    } catch (error) {
+      message.error(error.response.data)
+      
+    }
+  }
+
+  const handleBookDetailSubmit = async() =>{
+    try {
+      const response = await apiClient.put(GET_PERSONS_BOOKS, { bookName: Book },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": '*',
+          },
+          withCredentials: true
+        }
+      );
+      console.log(response)
+      if (response.status === 200) {
+        message.success("Return Transaction Created")
+      }
+      else if(response.status === 204){
         message.error("Book not available")
       }
       else{
@@ -215,8 +241,19 @@ const Transactions = () => {
             {/* <Input placeholder='Person Name' className='w-1/2 rounded-none'/> */}                        
 
 
-            <Button onClick={handleReturnSubmit} className='bg-blue-950 text-white font-semibold' >Submit</Button>
+            <Button onClick={handleBookDetailSubmit} className='bg-blue-950 text-white font-semibold' >Submit</Button>
           </div>
+          <Table
+          className={styles.customTable}
+          columns={columns}
+          dataSource={transactionData}
+          pagination={{
+            pageSize: 10,
+          }}
+          scroll={{
+            y: 55 * 5,
+          }}
+        />
         </div>
       </div>
     </div>

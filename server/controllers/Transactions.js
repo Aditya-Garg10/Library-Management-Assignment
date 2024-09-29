@@ -131,7 +131,7 @@ const bookTotalRentGenerated = async (req, res) => {
       });
       res.json({ total_rent: sum }).status(200);
     } else {
-      res.send("book not found");
+      res.send("book not found").status(204);
     }
   } catch (error) {
     res.status(500).send(error.message);

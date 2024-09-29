@@ -14,3 +14,4 @@ const TRANSACTIONS_ROUTE = "api/transactions"
 export const CREATE_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateOrCreateTransaction`  
 export const CREATE_RETURN_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateReturnTransaction`  
 export const GET_ALL_TRANSACTIONS = `${TRANSACTIONS_ROUTE}/allTransactions`
+export const GET_PERSONS_BOOKS = `${TRANSACTIONS_ROUTE}/BookDetails`
