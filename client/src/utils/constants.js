@@ -12,4 +12,5 @@ export const GET_BOOK_BY_DETAILS_ROUTE = `${BOOK_ROUTE}/getbooksByNamePriceCateg
 
 const TRANSACTIONS_ROUTE = "api/transactions"
 export const CREATE_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateOrCreateTransaction`  
+export const CREATE_RETURN_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateReturnTransaction`  
 export const GET_ALL_TRANSACTIONS = `${TRANSACTIONS_ROUTE}/allTransactions`
