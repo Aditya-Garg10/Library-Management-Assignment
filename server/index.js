@@ -18,7 +18,8 @@ const port = process.env.port
 app.use(cors({
     origin: [                       
       "https://library-management-assignment-al0npq4bt.vercel.app" ,
-      "https://library-management-assignment-z9tq.vercel.app"           
+      "https://library-management-assignment-z9tq.vercel.app",
+      "https://library-management-assignment.vercel.app"      
       ],    
     methods:["GET","POST","DELETE","PUT","PATCH"],
     credentials: true,
@@ -28,7 +29,8 @@ app.use(cors({
 
 const allowedOrigins = [             
   "https://library-management-assignment-al0npq4bt.vercel.app",
-  "https://library-management-assignment-z9tq.vercel.app"
+  "https://library-management-assignment-z9tq.vercel.app",
+  "https://library-management-assignment.vercel.app"
   ];
   
 app.use((req, res, next) => {
