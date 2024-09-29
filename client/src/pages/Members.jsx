@@ -53,7 +53,7 @@ const Members = () => {
   return (
     <div className='w-5/6 h-screen sm:w-full sm:h-full sm:p-5 p-20'>
 
-<h1 className='text-3xl py-10 text-black font-semibold font-myFont'>Members Registed!</h1>
+<h1 className='text-3xl py-10 text-black font-semibold font-myFont'>Members Registered!</h1>
 
     <Table
       className={styles.customTable}
