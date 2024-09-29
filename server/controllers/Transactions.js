@@ -27,7 +27,7 @@ const updateOrCreateTransaction = async (req, res) => {
         // console.log(response)
         res.json({ message:"Transaction created", response, response2 }).status(200);
       } else {
-        res.status(304).send("Book is not Available");
+        res.status(204).send("Book is not Available");
       }
     }
   } catch (error) {

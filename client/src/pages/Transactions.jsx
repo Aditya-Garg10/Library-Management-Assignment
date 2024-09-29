@@ -76,10 +76,10 @@ const Transactions = () => {
       );
       console.log(response)
       if (response.status === 200 ) {
-        message.success(response.data)
+        message.success("Transaction Created")
       }
-      else{
-        message.error(response.message)
+      else if(response.status === 304){
+        message.error("Book not available")
       }
     } catch (error) {
       message.error(error.message)
@@ -97,11 +97,18 @@ const Transactions = () => {
         }
       );
       console.log(response)
-      if (response.status === 200 || 201) {
-        message.success("Transaction Created")
+      if (response.status === 201) {
+        message.success("Return Transaction Created")
+      }
+      else if(response.status === 503){
+        message.error("Book not available")
+      }
+      else{
+        message.error("User or Entry does'nt exists")
       }
     } catch (error) {
-      console.log(error)
+      message.error(error.message)
+      
     }
   }
 
