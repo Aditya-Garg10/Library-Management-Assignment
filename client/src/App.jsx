@@ -6,7 +6,7 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Books from './pages/Books'
 import Members from './pages/Members'
-import { DataContext } from './context/context'
+import { DataContext } from './context/Context'
 import Transactions from './pages/Transactions'
 
 

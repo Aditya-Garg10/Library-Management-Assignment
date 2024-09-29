@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { DataContext } from '../context/context';
+import { DataContext } from '../context/Context';
 import { apiClient } from '../lib/Api-client';
 import { GET_BOOK_BY_DETAILS_ROUTE, GET_BOOK_BY_NAME_ROUTE, GET_BOOK_BY_PRICERANGE_ROUTE } from '../utils/constants';
 import { Table } from 'antd';

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Table } from 'antd';
 import { createStyles } from 'antd-style';
-import { DataContext } from '../context/context';
+import { DataContext } from '../context/Context';
 
 const useStyle = createStyles(({ css, token }) => {
   const { antCls } = token;

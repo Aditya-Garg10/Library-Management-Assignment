@@ -5,7 +5,7 @@ import { FaUserGroup, FaUserPlus } from 'react-icons/fa6';
 import { GrHelpBook } from "react-icons/gr";
 import { PieChart } from '@mui/x-charts/PieChart';
 // import {  Label, Pie, PieChart } from 'recharts'
-import { DataContext } from '../context/context';
+import { DataContext } from '../context/Context';
 import { Table } from 'antd';
 import { createStyles } from 'antd-style';
 
