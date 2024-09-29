@@ -16,8 +16,7 @@ const port = process.env.port
 
 
 app.use(cors({
-    origin: [               
-        "http://localhost:5173",  
+    origin: [                       
         "https://library-management-assignment.vercel.app"              
       ],    
     methods:["GET","POST","DELETE","PUT","PATCH"],
@@ -26,8 +25,7 @@ app.use(cors({
 
 
 
-const allowedOrigins = [         
-    "http://localhost:5173", 
+const allowedOrigins = [             
     "https://library-management-assignment.vercel.app"
   ];
   
