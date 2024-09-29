@@ -82,7 +82,7 @@ const Transactions = () => {
         message.error(response.message)
       }
     } catch (error) {
-      console.log(error)
+      message.error(error.message)
     }
   }
 
