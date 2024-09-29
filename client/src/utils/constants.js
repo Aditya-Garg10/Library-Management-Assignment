@@ -1,4 +1,4 @@
-export const HOST = "https://library-management-assignment.vercel.app";
+export const HOST = "https://library-management-assignment-6rky.vercel.app";
 
 const USER_ROUTE = "api/members"
 export const GET_USER_ROUTE = `${USER_ROUTE}/getAllUser`
