@@ -15,3 +15,6 @@ export const CREATE_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateOrCreateTra
 export const CREATE_RETURN_TRANSACTION_ROUTE = `${TRANSACTIONS_ROUTE}/updateReturnTransaction`  
 export const GET_ALL_TRANSACTIONS = `${TRANSACTIONS_ROUTE}/allTransactions`
 export const GET_PERSONS_BOOKS = `${TRANSACTIONS_ROUTE}/BookDetails`
+export const BOOK_TOTAL_RENT = `${TRANSACTIONS_ROUTE}/bookTotalRentGenerated`
+export const BOOKS_ISSUED_TO_PERSON = `${TRANSACTIONS_ROUTE}/listOfBooksIssuedtoPerson`
+export const ENTRIES_BTW_DATE_RANGE = `${TRANSACTIONS_ROUTE}/listofEntriesbtwDateRange`
