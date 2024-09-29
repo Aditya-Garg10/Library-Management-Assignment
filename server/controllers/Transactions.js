@@ -104,7 +104,7 @@ const BookDetails = async (req, res) => {
     });
     const totalCount = response.length;
 
-    res.send( users, totalCount, activeUser ).status(200);
+    res.json({ users, totalCount, activeUser }).status(200);
   } catch (error) {
     res.status(500).send(error.message);
   }

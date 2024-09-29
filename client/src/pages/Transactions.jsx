@@ -256,7 +256,7 @@ const Transactions = () => {
           <Table
           className={styles.customTable}
           columns={columns2}
-          dataSource={personList}
+          dataSource={[personList]}
           pagination={{
             pageSize: 10,
           }}
