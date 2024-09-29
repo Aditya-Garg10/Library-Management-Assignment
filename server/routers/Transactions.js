@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.put("/updateOrCreateTransaction",updateOrCreateTransaction);
 router.put("/updateReturnTransaction",updateReturnTransaction);
-router.get("/BookDetails",BookDetails);
+router.post("/BookDetails",BookDetails);
 router.post("/bookTotalRentGenerated",bookTotalRentGenerated);
 router.post("/listOfBooksIssuedtoPerson",listOfBooksIssuedtoPerson);
 router.post("/listofEntriesbtwDateRange",listofEntriesbtwDateRange);

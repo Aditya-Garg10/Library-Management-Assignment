@@ -212,8 +212,8 @@ const Transactions = () => {
                 }) : ""
               }
             />
-            {/* <Input placeholder='Person Name' className='w-1/2 rounded-none'/> */}            
-            <DatePicker className="" placeholder='Date of Issue' onChange={onChange} />
+            {/* <Input placeholder='Person Name' className='w-1/2 rounded-none'/> */}                        
+
 
             <Button onClick={handleReturnSubmit} className='bg-blue-950 text-white font-semibold' >Submit</Button>
           </div>
