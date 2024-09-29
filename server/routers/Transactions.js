@@ -6,9 +6,9 @@ const router = express.Router()
 router.put("/updateOrCreateTransaction",updateOrCreateTransaction);
 router.put("/updateReturnTransaction",updateReturnTransaction);
 router.get("/BookDetails",BookDetails);
-router.get("/bookTotalRentGenerated",bookTotalRentGenerated);
-router.get("/listOfBooksIssuedtoPerson",listOfBooksIssuedtoPerson);
-router.get("/listofEntriesbtwDateRange",listofEntriesbtwDateRange);
+router.post("/bookTotalRentGenerated",bookTotalRentGenerated);
+router.post("/listOfBooksIssuedtoPerson",listOfBooksIssuedtoPerson);
+router.post("/listofEntriesbtwDateRange",listofEntriesbtwDateRange);
 router.get("/allTransactions",allTransactions);
 
 

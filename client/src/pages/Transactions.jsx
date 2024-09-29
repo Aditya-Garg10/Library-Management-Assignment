@@ -78,11 +78,12 @@ const Transactions = () => {
       if (response.status === 200 ) {
         message.success("Transaction Created")
       }
-      else if(response.status === 304){
+      else if(response.status === 204){
         message.error("Book not available")
       }
     } catch (error) {
-      message.error(error.message)
+      console.log(error)
+      message.error(error.response.data)
     }
   }
 
@@ -107,13 +108,13 @@ const Transactions = () => {
         message.error("User or Entry does'nt exists")
       }
     } catch (error) {
-      message.error(error.message)
+      message.error(error.response.data)
       
     }
   }
 
   return (
-    <div className='h-screen w-full'>
+    <div className='h-full  w-full'>
       <div className="flex w-5/6 flex-col p-10">
         <h1 className='text-5xl pb-10 text-black font-bold  font-myFont'>Transactions</h1>
         <Table
@@ -190,6 +191,28 @@ const Transactions = () => {
                 }) : ""
               }
             />
+            <DatePicker className="" placeholder='Date of Issue' onChange={onChange} />
+
+            <Button onClick={handleReturnSubmit} className='bg-blue-950 text-white font-semibold' >Submit</Button>
+          </div>
+        </div>
+
+        <div className="flex gap-4 py-8 sm:py-3 flex-col">
+          <h1 className='text-xl sm:text-sm text-black  font-myFont'>List of people who have issued book in the past <span className='text-sm text-gray-500'> ( Please provide Book Name )</span></h1>
+          <div className="flex gap-3 flex-wrap">
+            <Select
+              showSearch
+              className='w-1/2 rounded-sm'
+              placeholder="Select a book"
+              optionFilterProp="label"
+              onChange={(e) => setBook(e)}
+              options={
+                allbookData ? allbookData.map((user, i) => {
+                  return { value: user.bookName, label: user.bookName, key: i }
+                }) : ""
+              }
+            />
+            {/* <Input placeholder='Person Name' className='w-1/2 rounded-none'/> */}            
             <DatePicker className="" placeholder='Date of Issue' onChange={onChange} />
 
             <Button onClick={handleReturnSubmit} className='bg-blue-950 text-white font-semibold' >Submit</Button>
