@@ -11,8 +11,9 @@ const DataContextProvider = (props) =>{
     const [rangeData, setRangeData] = useState(null);
     const [bookDetailsData, setBookDetailsData] = useState(null);
     const [transactionData , setTransactionData] = useState(null);
+    const [personList , setPersonList] = useState(null);
     
-    const contextValue = {userData, transactionData , setTransactionData, setUserData,bookData,allbookData, setAllBookData,bookDetailsData, setBookDetailsData, rangeData, setRangeData, setBookData}
+    const contextValue = {userData, transactionData ,personList , setPersonList, setTransactionData, setUserData,bookData,allbookData, setAllBookData,bookDetailsData, setBookDetailsData, rangeData, setRangeData, setBookData}
 
     return(
         <DataContext.Provider value={contextValue}>

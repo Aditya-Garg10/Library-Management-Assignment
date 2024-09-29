@@ -49,12 +49,21 @@ const columns = [
     dataIndex: 'totalRent',
     width: 100,
   },
-
+  
 ];
 
+const columns2 = [
+  {
+    title: 'Person',
+    dataIndex: 'users',
+    width: 150,
+  },
+ 
+  
+];
 
 const Transactions = () => {
-  const { userData, allbookData, transactionData } = useContext(DataContext)
+  const { userData, allbookData, transactionData , personList , setPersonList } = useContext(DataContext)
   const { styles } = useStyle();
   const [User, setUser] = useState("");
   const [Book, setBook] = useState("");
@@ -115,7 +124,7 @@ const Transactions = () => {
 
   const handleBookDetailSubmit = async() =>{
     try {
-      const response = await apiClient.put(GET_PERSONS_BOOKS, { bookName: Book },
+      const response = await apiClient.post(GET_PERSONS_BOOKS, { bookName: Book },
         {
           headers: {
             "Access-Control-Allow-Origin": '*',
@@ -123,9 +132,10 @@ const Transactions = () => {
           withCredentials: true
         }
       );
-      console.log(response)
+      
       if (response.status === 200) {
         message.success("Return Transaction Created")
+        setPersonList(response.data)
       }
       else if(response.status === 204){
         message.error("Book not available")
@@ -245,8 +255,8 @@ const Transactions = () => {
           </div>
           <Table
           className={styles.customTable}
-          columns={columns}
-          dataSource={transactionData}
+          columns={columns2}
+          dataSource={personList}
           pagination={{
             pageSize: 10,
           }}
